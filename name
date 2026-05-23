@@ -1,0 +1,30 @@
+<?php
+// whitelist.php
+header('Content-Type: application/json');
+
+// 白名单用户列表
+$whitelistedUsers = [
+    "eogvjslso",
+    "PlayerName456",
+    "TestAccount789"
+];
+
+// 获取请求参数
+$hwid = $_GET['hwid'] ?? '';
+$username = $_GET['username'] ?? '';
+
+// 验证白名单
+if (in_array($username, $whitelistedUsers)) {
+    echo json_encode([
+        "status" => "success",
+        "message" => "验证通过",
+        "access" => true
+    ]);
+} else {
+    echo json_encode([
+        "status" => "error",
+        "message" => "您不在白名单中",
+        "access" => false
+    ]);
+}
+?>
