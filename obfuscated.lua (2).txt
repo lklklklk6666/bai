@@ -1,4 +1,3 @@
--- 在本地脚本（LocalScript）中运行
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "此脚本已停用",
     Text = "请谅解可询问作者和管理",
